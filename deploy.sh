@@ -1,0 +1,1 @@
+find . -type f -exec curl -u $FTP_USER:$FTP_PASS --ftp-create-dirs -T {} ftp://rabilint.org/rabilint.org/bsa20/{} \;

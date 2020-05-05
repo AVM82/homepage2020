@@ -1,0 +1,14 @@
+language: node_js
+before_install:
+  - chmod +x deploy.sh
+node_js:
+  - 11.13.0
+script:
+  - npm install --global workbox-cli
+  - workbox generateSW workbox-config.js
+# whitelist
+branches:
+  only:
+    - master
+after_success:
+  - ./deploy.sh
